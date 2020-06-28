@@ -1,0 +1,13 @@
+function [RX, estFreqOffset] = fr_compensator(RX, FS, modType)
+
+compensator = comm.CoarseFrequencyCompensator(...
+    'Algorithm', 'Correlation-based', ...
+    'Modulation', modType, ...
+    'MaximumFrequencyOffset', 1e4, ...
+    'SampleRate', 2*FS);
+
+release(compensator);
+
+[RX, estFreqOffset] = compensator(RX);
+
+end

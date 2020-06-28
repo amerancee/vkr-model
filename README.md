@@ -1,2 +1,1 @@
-# vkr-model
-ZigBee MATLAB model
+##Matlab ZigBee model design
